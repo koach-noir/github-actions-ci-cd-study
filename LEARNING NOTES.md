@@ -30,7 +30,7 @@ paginate: true
     - [1.2 CI/CD](#12-cicd)
       - [1.2.1 継続的インテグレーション](#121-継続的インテグレーション)
       - [1.2.2 継続的デリバリー](#122-継続的デリバリー)
-      - [あ](#あ)
+      - [1.2.3 ソフトウェア開発の持続可能性](#123-ソフトウェア開発の持続可能性)
 
 <!-- /TOC -->
 
@@ -281,7 +281,184 @@ flowchart TD
         Outer2 -.-> C
         C === D
     end
-
 ```
 
-#### あ
+#### 1.2.3 ソフトウェア開発の持続可能性
+
+- **ユーザーの満足度向上とビジネスの競争力向上だけでなく**
+- **ソフトウェアエンジニアのクリエイティビティの向上もできる**
+- **ソフトウェア開発の持続可能性を高め、長期に渡る価値提供を実現する**
+
+```mermaid
+flowchart TD
+    classDef lv1-box stroke:#4f4f4f,fill:#444444,color:#ffffff,stroke-width:5px;
+    Outer1:::lv1-box
+    subgraph Outer1[ ]
+        direction BT
+
+        CICD[CI/CD] --> User
+        CICD --> Business
+        CICD --> Engineer
+
+        subgraph User[ユーザーの満足度向上]
+        end
+
+        subgraph Business[ビジネスの競争力向上]
+        end
+
+        subgraph Engineer[エンジニアのクリエイティビティ向上]
+        end
+
+        User --> Sustainable[長期的な価値提供の実現]
+        Business --> Sustainable
+        Engineer --> Sustainable
+    end
+```
+
+```mermaid
+flowchart TD
+    classDef lv1-box stroke:#4f4f4f,fill:#444444,color:#ffffff,stroke-width:5px
+    classDef lv2-box stroke:#5f5f5f,fill:#555555,color:#ffffff,stroke-width:3px
+    classDef lv3-box stroke:#6f6f6f,fill:#666666,color:#ffffff,stroke-width:3px
+
+    Outer1:::lv1-box
+    subgraph Outer1[ユーザー満足度向上]
+        direction TB
+        
+        CICD:::lv2-box
+        subgraph CICD[CI/CDによる品質向上]
+            direction TB
+            
+            Test:::lv3-box
+            subgraph Test[継続的テスト]
+                T1[バグの早期発見]
+                T2[品質向上]
+                T3[リスク抑制]
+                T1 --> T2 --> T3
+            end
+
+            Delivery:::lv3-box
+            subgraph Delivery[正常な機能提供]
+                D1[安定的な提供]
+                D2[信頼性向上]
+                D3[継続利用促進]
+                D1 --> D2 --> D3
+            end
+
+            Release:::lv3-box
+            subgraph Release[自動化リリース]
+                R1[頻繁なリリース]
+                R2[ニーズ検証]
+                R3[継続的改善]
+                R1 --> R2 --> R3
+                R3 -->|改善サイクル| R1
+            end
+        end
+
+        Test --> Delivery
+        Test --> Release
+        Delivery --> Results[ユーザー離脱の低減]
+        Release --> Results
+    end
+```
+
+```mermaid
+flowchart TD
+    classDef lv1-box stroke:#4f4f4f,fill:#444444,color:#ffffff,stroke-width:5px
+    classDef lv2-box stroke:#5f5f5f,fill:#555555,color:#ffffff,stroke-width:3px
+    classDef lv3-box stroke:#6f6f6f,fill:#666666,color:#ffffff,stroke-width:3px
+
+    Outer1:::lv1-box
+    subgraph Outer1[ビジネス競争力の向上]
+        direction BT
+        
+        CICD:::lv2-box
+        subgraph CICD[CI/CDによる高速な仮説検証]
+            direction BT
+            
+            Value:::lv3-box
+            subgraph Value[迅速な価値提供]
+                V1[素早い機能提供]
+                V2[市場変化への対応]
+                V3[競合との差別化]
+                V1 --> V2 --> V3
+            end
+
+            Feedback:::lv3-box
+            subgraph Feedback[フィードバックの活用]
+                F1[ユーザー反応の収集]
+                F2[市場ニーズの理解]
+                F3[新規機会の発見]
+                F1 --> F2 --> F3
+            end
+
+            Delivery:::lv3-box
+            subgraph Delivery[タイムリーな提供]
+                D1[継続的な改善]
+                D2[市場適合度向上]
+                D3[ビジネス成功率を上げる]
+                D1 --> D2 --> D3
+                D3 -->|成長サイクル| D1
+            end
+        end
+    end
+```
+
+```mermaid
+flowchart LR
+    classDef lv1-box stroke:#4f4f4f,fill:#444444,color:#ffffff,stroke-width:5px
+    classDef lv2-box stroke:#5f5f5f,fill:#555555,color:#ffffff,stroke-width:3px
+    classDef lv3-box stroke:#6f6f6f,fill:#666666,color:#ffffff,stroke-width:3px
+
+    Outer1:::lv1-box
+    subgraph Outer1[エンジニアのクリエイティビティ向上]
+        direction TB
+        
+        CICD:::lv2-box
+        subgraph CICD[CI/CDによる効率化・ゆとりをもたらす]
+            direction TB
+            
+            Problems:::lv3-box
+            subgraph Problems[早期問題解決]
+
+                direction TB
+                P1[問題の早期発見]
+                P2[解決の容易化]
+                P3[挑戦への自信]
+                P1 --> P2 --> P3
+            end
+
+            Automation:::lv3-box
+            subgraph Automation[自動化の恩恵]
+                direction LR
+
+                A1[作業の自動化]
+                A2[エラーの削減]
+                A3[リカバリー時間削減]
+                A1 --> A2 --> A3
+            end
+
+            Creative:::lv3-box
+            subgraph Creative[創造的時間の確保]
+
+                direction TB
+                C1[価値創出への集中]
+                C2[学習と実験]
+                C3[新規チャレンジ]
+                C1 --> C2 --> C3
+                C3 -->|成長サイクル| C1
+            end
+
+            Automation ---> Creative
+            Automation ---> Problems
+        end
+
+        Results1[スキル向上]
+        Results2[モチベーション向上]
+        Results3[開発アジリティ向上]
+
+        CICD --> Results1
+        CICD --> Results2
+        CICD --> Results3
+    end
+```
